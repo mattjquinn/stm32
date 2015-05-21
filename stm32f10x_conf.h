@@ -1,6 +1,8 @@
 #ifndef __STM32F10x_CONF_H
 #define __STM32F10x_CONF_H
 
+#define USE_FULL_ASSERT 1
+
 #ifdef  USE_FULL_ASSERT
 
 /**
