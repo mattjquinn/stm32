@@ -28,6 +28,13 @@ int main(void) {
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
   GPIO_Init(GPIOC, &GPIO_InitStructure);
 
+  // Configure pin for blue LED.
+  GPIO_StructInit(&GPIO_InitStructure);
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+  GPIO_Init(GPIOC, &GPIO_InitStructure);
+
   // Configure SysTick Timer
   if(SysTick_Config(SystemCoreClock / 1000)) {
     while(1);
@@ -57,6 +64,7 @@ void SysTick_Handler (void){
     TimingDelay--;
 
   push_btn_state = GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0);
+  GPIO_WriteBit(GPIOC, GPIO_Pin_8, ((BitAction)push_btn_state));
 }
 
 #ifdef USE_FULL_ASSERT
