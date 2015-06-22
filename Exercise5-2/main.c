@@ -15,7 +15,6 @@ main() {
 
   // Write Hello World!\n\r'' every 250msec.
   while(1) {
-    // TODO: Write Hello World to screen.
     uart_putc('H');
     uart_putc('e');
     uart_putc('l');
