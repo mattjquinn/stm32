@@ -1,0 +1,26 @@
+There are two approaches to this exercise:
+ 1) echoing character-by-character
+ 2) echoing line-by-line
+
+In main.c, I have labeled each of the two while loops
+corresponding to these approaches. The book invites
+you to test your code using cat to send an entire
+file out to the tty, then capturing the output in
+another file, then diffing the two files. For both
+approaches, you can do this using two terminals:
+
+- In terminal 1, run to capture output:
+
+$ sudo cat /dev/ttyUSB0 > out.txt
+
+- In terminal 2, run to send input:
+
+$ sudo sh -c 'cat input.txt > /dev/ttyUSB0'
+
+- Send kill signal in terminal 1 (Ctrl + C).
+- Diff the files ($ diff input.txt output.txt).
+
+I used InputToPipe.txt and created the two
+corresponding Out*.txt files in this manner. Make
+sure to use the correct tty, as yours may be named
+differently.
