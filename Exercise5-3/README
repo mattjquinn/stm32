@@ -24,3 +24,8 @@ I used InputToPipe.txt and created the two
 corresponding Out*.txt files in this manner. Make
 sure to use the correct tty, as yours may be named
 differently.
+
+As the author noted, my OutLineByLine.txt file differed
+in places from the original input file; this difference
+changed between most runs. I didn't see any differences
+with char-by-char echoing.
